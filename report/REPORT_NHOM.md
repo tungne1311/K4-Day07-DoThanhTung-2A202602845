@@ -336,11 +336,12 @@ Lưu ý `PYTHONIOENCODING` và `Out-File -Encoding utf8`: dùng `>` của PowerS
 | Lựa chọn tài liệu (Document Set Quality) | 9 / 10 |
 | Thiết kế chiến lược (Strategy Design) | 13 / 15 |
 | Chất lượng truy xuất (Retrieval Quality) | 8 / 10 |
-| Thuyết trình (Demo) | *(điền sau demo)* / 5 |
-| **Tổng phần nhóm** | **30 / 35** *(chưa tính demo)* |
+| Thuyết trình (Demo) | 4 / 5 |
+| **Tổng phần nhóm** | **34 / 40** |
 
 Căn cứ tự chấm:
 
 - **Lựa chọn tài liệu 9/10** — 8 tài liệu đủ metadata, `sources.csv` khớp 1-1, nguồn minh bạch, quy trình crawl tuân thủ `robots.txt` và ghi rõ 6 nguồn đã loại kèm lý do. Trừ 1 điểm vì `document_version` là `not-stated` toàn bộ và hai trường `department`/`language` hiện là hằng số, chưa đóng góp gì cho retrieval.
 - **Thiết kế chiến lược 13/15** — bốn chiến lược khác nhau, có baseline đo trên 2 tài liệu, có bảng điểm theo từng câu, và giải thích được vì sao mỗi chiến lược thắng ở câu nào. Trừ 2 điểm vì đề xuất "heading + overlap" mới dừng ở mức ý tưởng, chưa cài đặt và đo thử.
 - **Chất lượng truy xuất 8/10** — theo điểm cao nhất trong nhóm (`RecursiveChunker` của Đức Anh, 8/10), chấm bằng thang nghiêm yêu cầu ngữ cảnh chứa đủ mọi chuỗi đặc trưng của gold answer.
+- **Thuyết trình 4/5** — đây là **tự đánh giá mức chuẩn bị**, ghi trước buổi demo. Nhóm đã có đủ ba thứ lab doc yêu cầu trình bày: chiến lược riêng của từng thành viên kèm lý do, bảng so sánh trong nhóm với điểm theo từng câu, và bài học rút ra. `bench.py` chạy được bằng một lệnh nên demo trực tiếp không phải debug tại chỗ. Trừ 1 điểm vì nhóm chưa tập luyện phần chia lượt nói giữa bốn người trong 6–8 phút, và chưa chuẩn bị câu trả lời cho câu hỏi "nhóm học được gì từ nhóm khác" — phần này chỉ trả lời được sau khi nghe các nhóm còn lại.

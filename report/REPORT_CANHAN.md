@@ -278,7 +278,13 @@ Repo không cấu hình API key LLM nào, nên `llm_fn` là hàm `demo_llm` tron
 **Điều hay nhất tôi học được từ thành viên khác / nhóm khác (qua demo):**
 > *Viết 2-3 câu:*
 
-*(điền sau buổi demo)*
+Điều đáng giá nhất tôi học được từ nhóm là **`HeadingChunker` của Nguyên thắng đúng câu mà cả ba chiến lược còn lại đều thua**. Câu 2 hỏi điều kiện được mượn tài liệu về nhà, đáp án "đạt 25/35 câu" nằm ở cuối mục "Điều kiện sử dụng". Chiến lược `FixedSizeChunker` của tôi lấy đúng tài liệu `luu-hanh-tai-lieu` vào top-3 nhưng chunk dừng lại **ngay trước** dòng chứa con số đó, nên vẫn bị 0đ. Nguyên giữ trọn mục nên con số không rơi ra ngoài. Tôi từng nghĩ overlap là cách bảo hiểm tốt nhất cho dữ liệu nhiều số liệu, nhưng hoá ra giữ trọn ranh giới ngữ nghĩa còn quan trọng hơn khi thông tin nằm ở cuối một mục.
+
+Điều thứ hai đến từ chiến lược của Đức Anh. `RecursiveChunker` đạt 8/10, cao nhất nhóm, mà không cần biết trước tài liệu có cấu trúc heading hay không — nó chỉ ưu tiên `"\n\n"` rồi `"\n"`. So với `HeadingChunker` phải phụ thuộc vào việc văn bản có được viết bằng Markdown có heading, cách làm của Đức Anh **bền hơn khi đổi sang chủ đề khác**. Đây là câu trả lời cho câu hỏi "chuyển sang chủ đề khác thì chiến lược nào còn dùng được" mà lab doc nói giảng viên hay hỏi.
+
+Điều thứ ba là bài học ngược từ Minh: `SentenceChunker` được 4/10 không phải vì code sai mà vì **giả thuyết ban đầu sai**. Cả nhóm đều nghĩ văn bản quy định viết thành câu hoàn chỉnh nên tách theo câu sẽ giữ được ý trọn vẹn; thực tế corpus phần lớn là bảng Markdown và danh sách gạch đầu dòng, gần như không có dấu chấm để bám, sinh ra chunk 1.411 ký tự. Nhìn dữ liệu trước khi chọn thuật toán, đừng chọn theo cảm giác.
+
+*(phần học được từ các nhóm khác: bổ sung sau buổi demo)*
 
 ---
 
