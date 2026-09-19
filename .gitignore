@@ -20,3 +20,7 @@ src_w_solution/
 
 # Instructor-only notes (chứa gợi ý/đáp án chấm bài, không public cho học viên)
 docs/INSTRUCTOR_GUIDE.md
+
+# Gói dữ liệu gửi nhóm và bản bench của thành viên khác — không nộp
+*.zip
+bench_minh.py

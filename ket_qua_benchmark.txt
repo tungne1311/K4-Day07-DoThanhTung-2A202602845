@@ -1,0 +1,99 @@
+==============================================================================
+BENCHMARK RETRIEVAL — K4-L3A, nhóm Top1Server
+Corpus          : data\thu-vien-huit (8 tài liệu)
+Chiến lược chunk: FixedSizeChunker(500, overlap 50)  —  Đỗ Thanh Tùng
+Số chunk đã nạp : 63
+Embedding       : LocalEmbedder (paraphrase-multilingual-MiniLM-L12-v2, 384 chiều)
+==============================================================================
+
+[1] Được mượn tối đa bao nhiêu tài liệu và trong bao nhiêu ngày?
+    dạng hỏi   : tra số liệu + CÂU ĐÁNH BẪY (cần lọc metadata)
+    filter     : {'audience': 'student'}
+    gold doc   : han-muc-muon-tai-lieu-sinh-vien
+    gold answer: Sinh viên, học viên được mượn tối đa 3 tài liệu trong 10 ngày.
+    --- top-3 ---
+    1. score=+0.6956  han-muc-muon-tai-lieu-sinh-vien  [han-muc-muon-tai-lieu-sinh-vien#0]
+       # Hạn mức mượn tài liệu về nhà của sinh viên, học viên Trích từ mục 5 "Quy định mượn/trả tài li...
+    2. score=+0.6769  han-muc-muon-tai-lieu-sinh-vien  [han-muc-muon-tai-lieu-sinh-vien#4]
+       khi nào thanh toán xong các tài liệu mượn quá hạn, người sử dụng sẽ được mượn tiếp các tài liệu...
+    3. score=+0.5521  huong-dan-su-dung-thu-vien  [huong-dan-su-dung-thu-vien#5]
+       | Thẻ cấp lại | Phí gia hạn/năm | |---|---|---| | 100.000 đ/thẻ | 50.000 đ/thẻ | 50.000 đồng/nă...
+    => 2đ — gold doc ở top-1 và ngữ cảnh chứa đủ đáp án
+
+[2] Người sử dụng cần đáp ứng những điều kiện nào để được mượn tài liệu về nhà?
+    dạng hỏi   : hỏi điều kiện
+    filter     : (không)
+    gold doc   : luu-hanh-tai-lieu
+    gold answer: Hoàn thành bài kiểm tra hướng dẫn sử dụng thư viện đạt 25/35 câu, đăng ký thẻ thư viện và đóng tiền thế chân theo quy định.
+    --- top-3 ---
+    1. score=+0.7299  han-muc-muon-tai-lieu-sinh-vien  [han-muc-muon-tai-lieu-sinh-vien#4]
+       khi nào thanh toán xong các tài liệu mượn quá hạn, người sử dụng sẽ được mượn tiếp các tài liệu...
+    2. score=+0.7182  quy-dinh-su-dung-thu-vien  [quy-dinh-su-dung-thu-vien#10]
+       hí trên mạng. ## 5. Quy định mượn/trả tài liệu ### a. Mượn tài liệu của thư viện Người sử dụng ...
+    3. score=+0.6929  luu-hanh-tai-lieu  [luu-hanh-tai-lieu#2]
+       ng Vebrary có trên App Store và Google Play. Điều kiện sử dụng: đã tham gia lớp tập huấn sử dụn...
+    => 0đ — đúng tài liệu nhưng ngữ cảnh THIẾU: ['25/35']
+
+[3] Quy trình đăng ký và sử dụng phòng học nhóm gồm những bước nào, và đến trễ bao lâu thì kết quả đặt phòng bị hủy?
+    dạng hỏi   : hỏi quy trình + điều kiện hủy
+    filter     : (không)
+    gold doc   : su-dung-phong-hoc-nhom
+    gold answer: Đăng ký tại Quầy thông tin hoặc mục ĐẶT PHÒNG trực tuyến; nhận kết quả qua email; đến Quầy thông tin Lầu 3 hoặc Lầu 4 làm thủ tục. Đến trễ trên 15 phút thì kết quả bị hủy.
+    --- top-3 ---
+    1. score=+0.6371  quy-dinh-su-dung-thu-vien  [quy-dinh-su-dung-thu-vien#20]
+       c tiếp tại Quầy thông tin, hoặc đăng ký trực tuyến tại Cổng thông tin Thư viện, chọn mục ĐẶT PH...
+    2. score=+0.5716  han-muc-muon-tai-lieu-giang-vien  [han-muc-muon-tai-lieu-giang-vien#2]
+       tục sử dụng các dịch vụ thư viện. ## Xử lý khi trả quá hạn - Đối với giảng viên, viên chức thuộ...
+    3. score=+0.5702  han-muc-muon-tai-lieu-sinh-vien  [han-muc-muon-tai-lieu-sinh-vien#3]
+       thẻ thư viện; phải tham gia lớp hướng dẫn sử dụng thư viện để được kích hoạt thẻ. ## Xử lý khi ...
+    => 0đ — gold doc không có trong top-3
+
+[4] Dịch vụ mượn liên thư viện cho phép mượn tối đa bao nhiêu tài liệu, trong bao lâu và phí trễ hạn là bao nhiêu?
+    dạng hỏi   : tra số liệu ghép (3 con số)
+    filter     : (không)
+    gold doc   : muon-lien-thu-vien
+    gold answer: Tối đa 2 tài liệu/lần, thời hạn 20 ngày từ ngày nhận, phí trễ hạn 5.000 đồng/tài liệu/ngày.
+    --- top-3 ---
+    1. score=+0.8043  muon-lien-thu-vien  [muon-lien-thu-vien#3]
+       theo chính sách của dịch vụ (nếu có). ## Quy định - Đối với tài liệu được mượn: thực hiện theo ...
+    2. score=+0.7852  quy-dinh-su-dung-thu-vien  [quy-dinh-su-dung-thu-vien#10]
+       hí trên mạng. ## 5. Quy định mượn/trả tài liệu ### a. Mượn tài liệu của thư viện Người sử dụng ...
+    3. score=+0.7556  quy-dinh-su-dung-thu-vien  [quy-dinh-su-dung-thu-vien#6]
+       ộc trách nhiệm và quyền lợi giữa người sử dụng với thư viện khi người sử dụng mượn tài liệu về ...
+    => 2đ — gold doc ở top-1 và ngữ cảnh chứa đủ đáp án
+
+[5] Lệ phí cấp mới, cấp lại, gia hạn thẻ thư viện là bao nhiêu và thời gian trả thẻ được quy định thế nào?
+    dạng hỏi   : tra bảng giá + thời hạn
+    filter     : (không)
+    gold doc   : huong-dan-su-dung-thu-vien
+    gold answer: Cấp mới 100.000 đồng, cấp lại 50.000 đồng, gia hạn 50.000 đồng/năm; thẻ mới trả sau bài kiểm tra 1 tuần hoặc theo lịch hẹn, thẻ cấp lại sau 7 ngày.
+    --- top-3 ---
+    1. score=+0.7200  huong-dan-su-dung-thu-vien  [huong-dan-su-dung-thu-vien#5]
+       | Thẻ cấp lại | Phí gia hạn/năm | |---|---|---| | 100.000 đ/thẻ | 50.000 đ/thẻ | 50.000 đồng/nă...
+    2. score=+0.7157  quy-dinh-su-dung-thu-vien  [quy-dinh-su-dung-thu-vien#5]
+       ư viện cấp khi đăng ký làm thẻ và sử dụng thư viện. - Người sử dụng có trách nhiệm tham gia lớp...
+    3. score=+0.7040  han-muc-muon-tai-lieu-sinh-vien  [han-muc-muon-tai-lieu-sinh-vien#3]
+       thẻ thư viện; phải tham gia lớp hướng dẫn sử dụng thư viện để được kích hoạt thẻ. ## Xử lý khi ...
+    => 2đ — gold doc ở top-1 và ngữ cảnh chứa đủ đáp án
+
+==============================================================================
+TỔNG ĐIỂM RETRIEVAL: 6/10
+==============================================================================
+
+A/B METADATA FILTER — "Được mượn tối đa bao nhiêu tài liệu và trong bao nhiêu ngày?"
+
+  KHÔNG filter:
+      1. score=+0.7505  muon-lien-thu-vien  [muon-lien-thu-vien#3]
+         theo chính sách của dịch vụ (nếu có). ## Quy định - Đối với tài liệu được mượn: thực hiện theo ...
+      2. score=+0.6956  han-muc-muon-tai-lieu-sinh-vien  [han-muc-muon-tai-lieu-sinh-vien#0]
+         # Hạn mức mượn tài liệu về nhà của sinh viên, học viên Trích từ mục 5 "Quy định mượn/trả tài li...
+      3. score=+0.6866  han-muc-muon-tai-lieu-giang-vien  [han-muc-muon-tai-lieu-giang-vien#0]
+         # Hạn mức mượn tài liệu về nhà của giảng viên, viên chức Trích từ mục 5 "Quy định mượn/trả tài ...
+
+  CÓ filter audience=student:
+      1. score=+0.6956  han-muc-muon-tai-lieu-sinh-vien  [han-muc-muon-tai-lieu-sinh-vien#0]
+         # Hạn mức mượn tài liệu về nhà của sinh viên, học viên Trích từ mục 5 "Quy định mượn/trả tài li...
+      2. score=+0.6769  han-muc-muon-tai-lieu-sinh-vien  [han-muc-muon-tai-lieu-sinh-vien#4]
+         khi nào thanh toán xong các tài liệu mượn quá hạn, người sử dụng sẽ được mượn tiếp các tài liệu...
+      3. score=+0.5521  huong-dan-su-dung-thu-vien  [huong-dan-su-dung-thu-vien#5]
+         | Thẻ cấp lại | Phí gia hạn/năm | |---|---|---| | 100.000 đ/thẻ | 50.000 đ/thẻ | 50.000 đồng/nă...
